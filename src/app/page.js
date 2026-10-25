@@ -63,7 +63,7 @@ const skills = [
           <h2 className="mb-3 text-lg font-bold text-utama">Jadwal Belajar</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse text-xs">
-              <thead className="bg-table-header text-white">
+              <thead className="bg-table-header text-white bg-black">
                 <tr>
                   <th className="px-5 py-5">Hari</th>
                   <th className="px-5 py-5">waktu</th>
