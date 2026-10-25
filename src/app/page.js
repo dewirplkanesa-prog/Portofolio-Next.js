@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero"; 
-import SkillCard from "@/components/SkillCard"; 
+import SkillCard from "@/components/SkillCard";
+import Kartu from "@/components/Kartu"; 
 const skills = [
     { nama: "HTML", level: "Menengah" },
     { nama: "CSS", level: "Menengah" },  
@@ -16,10 +17,9 @@ const skills = [
           tagline="Siswa kelas X SMK, calon Junior Web Developer di Kelas Industri UBIG."      
         />  
 
-        <section className="mt-8 grid rounded-xl border border-gray-300 bg-white p-6 shadow-sm">
-          <h2 className="font-bold text-2xl mb-3 text-utama">Tentang saya</h2>
-          <p className="leading-7 text-balck-700">Saya adalah Siswa dari SMKN 1 KEPANJEN, dan saya adalah seorang web developer siswa yang mengikuti kelas industri UBIG</p>
-        </section>
+        <Kartu judul="Tentang Saya">
+          <p className="leading-7 text-gray-700">Saya adalah Siswa dari SMKN 1 KEPANJEN, dan saya adalah seorang web developer siswa yang mengikuti kelas industri UBIG</p>
+        </Kartu>
 
         <section className="mt-5 grid gap-6 md:grid-cols-2 ">
           <div className="rounded-xl border border-gray-300 bg-white p-6 shadow-sm">
@@ -36,7 +36,7 @@ const skills = [
             <h2 className="mb-3 text-2xl font-bold text-utama">Cita-cita</h2>
             <p className="mb-2 text-sm text-gray-600">
               Saya ingin menjadi 
-              <strong> Web Developer</strong> langkah yang saya rencanakan
+              <strong> Web Developer</strong> langkah yang saya rencanakan:
             </p> <br></br>
 
             <ul className="list-inside list-disc space-y-2 text-gray-600">
@@ -46,7 +46,6 @@ const skills = [
                 <li>bekerja di perusahaan teknologi sebagai Web Developer</li>
               </ol>
             </ul>
-
           </div>
         </section>    
         
@@ -71,7 +70,7 @@ const skills = [
                 </tr>
               </thead>
 
-              <tbody className="text-black-300">
+              <tbody className="text-gray-700">
                 <tr className="border-b border-gray-700">
                   <td className="px-4 py-4">senin</td>
                   <td className="px-4 py-4">19.00-20.00</td>
