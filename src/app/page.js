@@ -31,21 +31,19 @@ const skills = [
               <li>coding</li>
             </ul>
           </div>
-
+          
           <div className="rounded-xl border border-gray-300 bg-white p-6 shadow-sm">
             <h2 className="mb-3 text-2xl font-bold text-utama">Cita-cita</h2>
-            <p className="mb-2 text-sm text-gray-600">
+            <p className="mb-4 text-sm text-gray-600">
               Saya ingin menjadi 
               <strong> Web Developer</strong> langkah yang saya rencanakan:
             </p> <br></br>
 
-            <ul className="list-inside list-disc space-y-2 text-gray-600">
-              <ol type="1" className="list-decimal pl-5 marker:text-gray-500 marker:font-bold">
-                <li>menyelesaikan kelas industri</li>
-                <li>melamar pekerjaan menjadi Web Developer </li>
-                <li>bekerja di perusahaan teknologi sebagai Web Developer</li>
-              </ol>
-            </ul>
+            <ol className="list-decimal pl-5 space-y-2 text-gray-600 marker:font-bold marker:text-gray-500">
+              <li>Menyelesaikan kelas industri</li>
+              <li>Melamar pekerjaan menjadi Web Developer</li>
+              <li>Bekerja di perusahaan teknologi sebagai Web Developer</li>
+            </ol>
           </div>
         </section>    
         
