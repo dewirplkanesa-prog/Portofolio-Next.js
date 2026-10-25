@@ -1,0 +1,20 @@
+import Image from "next/image"; 
+
+export default function Hero({ nama, tagline }) {  
+    return (    
+        <section className="flex flex-col items-center gap-6 text-center md:flex-row md:text-left">      
+            <Image        
+            src="/foto-profil.png"        
+            alt={`Foto profil ${nama}`}        
+            width={180}        
+            height={180}        
+            priority        
+            className="aspect-square h-[180px] w-[180px] shrink-0 rounded-full border-4 border-aksen object-cover"      
+            />      
+            <div className="w-full min-w-0 flex-1">        
+                <h1 className="text-3xl font-bold text-utama md:text-5xl">Halo, saya {nama}!</h1>        
+                <p className="mt-3 break-words text-base leading-7 sm:text-lg text-gray-700">{tagline}</p>      
+            </div>    
+        </section>  
+    ); 
+}
