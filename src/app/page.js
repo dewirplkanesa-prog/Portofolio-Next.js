@@ -37,7 +37,7 @@ const skills = [
             <p className="mb-4 text-sm text-gray-600">
               Saya ingin menjadi 
               <strong> Web Developer</strong> langkah yang saya rencanakan:
-            </p> <br></br>
+            </p> 
 
             <ol className="list-decimal pl-5 space-y-2 text-gray-600 marker:font-bold marker:text-gray-500">
               <li>Menyelesaikan kelas industri</li>
