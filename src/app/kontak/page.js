@@ -1,187 +1,62 @@
-"use client";
+import FormKontak from "@/components/FormKontak";
 
-import Link from "next/link";
+export const metadata = {
+  title: "Kontak | Dewi Lestari",
+  description:
+    "Hubungi Dewi Lestari untuk pertanyaan, diskusi, atau kolaborasi proyek.",
+};
 
-export default function Kontak() {
-    return (
-        <main className="mx-auto max-w-6xl px-4 py-10 min-h-screen">
+ export default function Kontak() {
+  return (
+    <main className="mx-auto w-full max-w-5xl px-4 py-10">
 
-            <h1 className="mb-8 text-3xl font-bold text-utama md:text-4xl">
-                Hubungi saya
-            </h1>
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold text-utama dark:text-gray-100 md:text-4xl tracking-tight">
+          Hubungi Saya
+        </h1>
 
-            <div className="grid gap-6 md:grid-cols-3 w-full">
+        <p className="mt-2 text-base text-gray-600 dark:text-gray-400">
+          Punya pertanyaan atau ingin bekerja sama membuat proyek?
+          Silakan isi formulir berikut:
+        </p>
+      </div>
 
-                
-         
-                <section className="rounded-2xl border border-gray-200 bg-white p-6 md:p-8 shadow-sm md:col-span-2">
+      <div className="mt-8 grid w-full gap-6 md:grid-cols-3">
 
-                
-                    <form 
-                        className="space-y-5" 
-                        action="https://formspree.io/f/mbggzyvl" 
-                        method="POST"
-                    >
+        
+        <section className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:col-span-2">
+          <FormKontak />
+        </section>
 
-                        <div>
-                            <label htmlFor="nama" className="block font-semibold">
-                                Nama lengkap
-                            </label>
-                            <input
-                                type="text"
-                                id="nama"
-                                name="nama"
-                                placeholder="masukan nama lengkap anda"
-                                required
-                                className="mt-2 w-full rounded-lg border border-gray-300 bg-white p-3"
-                                onChange={(e) =>{
-                                    const input = e.currentTarget;
-                                    if(/[0-9]/.test(input.value)) {
-                                        input.setCustomValidity("jangan gunakan angka hanya boleh huruf...");
-                                        input.reportValidity();
-                                        input.value = input.value.replace(/[0-9]/g, '');
-                                    } else {
-                                        input.setCustomValidity("");
-                                    }
-                                }}
-                            />
-                        </div>
+        
+        <div className="flex h-full w-full flex-col justify-start rounded-xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:p-8">
 
-                        <div>
-                            <label htmlFor="email" className="block font-semibold">
-                                Email
-                            </label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="nama@contoh.com"
-                                required
-                                className="mt-2 w-full rounded-lg border border-gray-300 bg-white p-3"
-                            />
-                        </div>
+          <h2 className="mb-4 text-lg font-bold text-gray-800 dark:text-gray-100">
+            Temukan Saya di
+          </h2>
 
-                        <div>
-                            <label htmlFor="nomor HP" className="block font-semibold">Nomor HP</label>
-                            <input 
-                                type="text" 
-                                id="nomor-hp" 
-                                name="nomor-hp" 
-                                placeholder="masukkan nomer telepon anda" 
-                                required 
-                                maxLength={13} 
-                                className="mt-2 w-full rounded-lg border border-gray-300 bg-white p-3" 
-                                onChange={(e) => {
-                                    const input = e.currentTarget
-                                    if(/[^0-9]/.test(input.value)){
-                                        input.setCustomValidity("hanya angka huruf dilarang");
-                                        input.reportValidity();
-                                        input.value = input.value.replace(/[^0-9]/g, '');
-                                    } else {
-                                        input.setCustomValidity("");
-                                    }
-                                }}
-                            /> 
-                        </div>
+          <div className="flex flex-col space-y-3 text-sm">
 
-                        <div>
-                            <label htmlFor="keperluan" className="block font-semibold">Keperluan</label>
-                            <select
-                                id="keperluan"
-                                name="keperluan"
-                                required
-                                className="mt-2 w-full rounded-lg border border-gray-300 bg-white p-3 outline-none focus:border-blue-500"
-                            >
-                                <option value="">Pilih keperluan</option>
-                                <option value="kerja sama">Membuat proyek bersama</option>
-                                <option value="pertanyaan">Pertayaan</option>
-                            </select>
-                        </div>
+            <a
+              href="https://github.com/dewirplkanesa-prog"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block font-medium text-aksen hover:underline dark:text-red-300"
+            >
+              GitHub
+            </a>
 
-                        <div>
-                            <label htmlFor="pesan" className="block font-semibold text-utama">
-                                Pesan
-                            </label>
-                            <textarea
-                                id="pesan"
-                                name="pesan"
-                                rows="5"
-                                placeholder="Tulis pesan Anda di sini..."
-                                required
-                                className="mt-2 w-full rounded-lg border border-gray-300 bg-white p-3 outline-none focus:border-blue-500"
-                                onChange={(e) => {
-                                    const input = e.currentTarget
-                                    if(/[0-9]/.test(input.value)){
-                                        input.setCustomValidity("hanya huruf dilarang angka");
-                                        input.reportValidity();
-                                        input.value = input.value.replace(/[0-9]/g, '');
-                                    } else {
-                                        input.setCustomValidity("");
-                                    }
-                                }}
-                            />
-                        </div>
+            <a
+              href="mailto:dewirplkanesa@gmail.com"
+              className="inline-block break-all font-medium text-aksen hover:underline dark:text-red-300"
+            >
+              dewirplkanesa@gmail.com
+            </a>
 
-                        <button
-                            type="submit"
-                            className="rounded-lg bg-utama px-6 py-3 font-semibold text-white transition hover:opacity-90 cursor-pointer"
-                        >
-                            Kirim Pesan
-                        </button>
+          </div>
+        </div>
 
-                    </form>
-
-                </section>
-
-
-
-                <section className="rounded-2xl border border-gray-200 bg-white p-6 md:p-8 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <h2 className="mb-6 text-xl font-bold text-utama">
-                            Temukan Saya di
-                        </h2>
-
-                        <div className="space-y-6">
-                            <div>
-                                <h3 className="font-semibold text-utama">
-                                    GitHub
-                                </h3>
-                                <Link
-                                    href="https://github.com/dewirplkanesa-prog"
-                                    target="_blank"
-                                    className="mt-1.5 inline-block text-sm text-aksen hover:underline"
-                                    rel="noopener noreferrer"
-                                >
-                                    dewirplkanesa-prog
-                                </Link>
-                            </div>
-
-                            <div>
-                                <h3 className="font-semibold text-utama">
-                                    Email
-                                </h3>
-                                <a
-                                    href="mailto:dewirplkanesa@gmail.com"
-                                    className="mt-1.5 inline-block w-full break-all text-sm text-aksen hover:underline"
-                                >
-                                    dewirplkanesa@gmail.com
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="mt-8 pt-4 border-t border-gray-200 text-xs text-gray-400 hidden md:block">
-                        Tanggapan biasanya dikirim dalam 1x24 jam.
-                    </div>
-                    
-     
-                </section>
-
-            </div>
-
-
-        </main>
-    );
-}
-
-
+      </div>
+    </main>
+  );
+ }

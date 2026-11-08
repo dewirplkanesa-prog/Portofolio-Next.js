@@ -1,5 +1,13 @@
 @import "tailwindcss";
+
+@custom-variant dark
+(&:where(.dark, .dark *));
  
+.dark .kartu{
+    background-color: #1f2937;
+    border-color: #1f2937;
+}
+
 @theme {
     --color-utama: #1D3557;
     --color-aksen: #C1121F;

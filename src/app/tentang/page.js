@@ -8,14 +8,14 @@ export const metadata = {
 export default function TentangPage() {
   return (
     <main className="mx-auto max-w-5xl px-4 py-10">
-      <h1 className="text-3xl font-bold text-utama md:text-4xl">
+      <h1 className="text-3xl font-bold text-utama dark:text-gray-100 md:text-4xl">
         Tentang Saya
       </h1>
 
       {/* Perkenalan */}
       <div className="mt-8">
         <Kartu judul="Perkenalan">
-          <p className="leading-7 text-gray-700">
+          <p className="leading-7 text-gray-700 dark:text-gray-300">
             Saya adalah siswa dari SMKN 1 KEPANJEN, dan saya
             adalah seorang siswa web developer yang mengikuti
             kelas industri UBIG.
@@ -26,7 +26,7 @@ export default function TentangPage() {
       {/* Hobi dan Cita-cita */}
       <div className="mt-6 grid gap-6 md:grid-cols-2">
         <Kartu judul="Hobi">
-          <ul className="list-inside list-disc space-y-2 text-gray-600">
+          <ul className="list-inside list-disc space-y-2 text-gray-600 dark:text-gray-300">
             <li>Mendengarkan musik</li>
             <li>Menyanyi</li>
             <li>Menggambar</li>
@@ -35,12 +35,12 @@ export default function TentangPage() {
         </Kartu>
 
         <Kartu judul="Cita-cita">
-          <p className="mb-4 text-sm text-gray-600">
+          <p className="mb-4 text-sm text-gray-600 dark:text-gray-300">
             Saya ingin menjadi <strong>Web Developer</strong>.
             Langkah yang saya rencanakan:
           </p>
 
-          <ol className="list-decimal space-y-2 pl-5 text-gray-600">
+          <ol className="list-decimal space-y-2 pl-5 text-gray-600 dark:text-gray-300">
             <li>Menyelesaikan kelas industri</li>
             <li>Melamar pekerjaan menjadi Web Developer</li>
             <li>
@@ -55,7 +55,7 @@ export default function TentangPage() {
         <Kartu judul="Jadwal Belajar">
           <div className="overflow-x-auto">
             <table className="w-full border-collapse text-left text-xs">
-              <thead className="bg-black text-white">
+              <thead className="bg-black text-white dark:text-gray-300">
                 <tr>
                   <th className="px-5 py-5">Hari</th>
                   <th className="px-5 py-5">Waktu</th>
@@ -63,7 +63,7 @@ export default function TentangPage() {
                 </tr>
               </thead>
 
-              <tbody className="text-gray-700">
+              <tbody className="text-gray-700 dark:text-gray-300">
                 <tr className="border-b border-gray-200">
                   <td className="px-4 py-4">Senin</td>
                   <td className="px-4 py-4">19.00-20.00</td>

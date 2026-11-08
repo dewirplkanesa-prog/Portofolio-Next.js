@@ -12,11 +12,11 @@ export default function Keahlian() {
 
   return (
     <main className="mx-auto min-h-screen max-w-6xl px-4 py-10">
-      <h1 className="mb-3 text-3xl font-bold text-utama md:text-4xl">
+      <h1 className="mb-3 text-3xl font-bold text-utama dark:text-gray-100 md:text-4xl">
         Keahlian Saya
       </h1>
 
-      <p className="mb-10 text-gray-600">
+      <p className="mb-10 text-gray-600 dark:text-gray-400">
         Berikut beberapa keahlian yang saya pelajari selama belajar
         di bidang teknologi dan desain.
       </p>

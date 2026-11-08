@@ -1,96 +1,65 @@
-import Hero from "@/components/Hero"; 
-import SkillCard from "@/components/SkillCard";
-import Kartu from "@/components/Kartu"; 
-const skills = [
+import Link from "next/link";
+import Hero from "@/components/Hero";
+import ProyekCard from "@/components/ProyekCard";
+import { proyek } from "@/data/proyek";
+import FilterKeahlian from "@/components/FilterKeahlian";
+
+export default async function Page() {
+  const skills = [
     { nama: "HTML", level: "Menengah" },
-    { nama: "CSS", level: "Menengah" },  
-    { nama: "Git dan GitHub", level: "Dasar" },  
-    { nama: "Desain poster dengan Canva", level: "Mahir" },  
-    { nama: "JavaScript", level: "Dasar" }, 
-  ]; 
-  
-  export default function Home() {  
-    return (    
-      <main className="mx-auto max-w-5xl px-4 py-10">      
-        <Hero        
-          nama="Dewi Lestari"        
-          tagline="Siswa kelas X SMK, calon Junior Web Developer di Kelas Industri UBIG."      
-        />  
+    { nama: "CSS", level: "Menengah" },
+    { nama: "Git dan GitHub", level: "Dasar" },
+    { nama: "Desain poster dengan Canva", level: "Mahir" },
+    { nama: "JavaScript", level: "Dasar" },
+  ];
 
-        <Kartu judul="Tentang Saya">
-          <p className="leading-7 text-gray-700">Saya adalah Siswa dari SMKN 1 KEPANJEN, dan saya adalah seorang web developer siswa yang mengikuti kelas industri UBIG</p>
-        </Kartu>
+  const proyekTerbaru = proyek.slice(-3);
 
-        <section className="mt-5 grid gap-6 md:grid-cols-2 ">
-          <div className="rounded-xl border border-gray-300 bg-white p-6 shadow-sm">
-            <h2 className="mb-3 text-2xl font-bold text-utama">Hobi</h2>
-            <ul className="list-inside list-disc space-y-2 text-gray-600">
-              <li>mendengarkan musik</li>
-              <li>menyanyi</li>
-              <li>menggambar</li>
-              <li>coding</li>
-            </ul>
-          </div>
-          
-          <div className="rounded-xl border border-gray-300 bg-white p-6 shadow-sm">
-            <h2 className="mb-3 text-2xl font-bold text-utama">Cita-cita</h2>
-            <p className="mb-4 text-sm text-gray-600">
-              Saya ingin menjadi 
-              <strong> Web Developer</strong> langkah yang saya rencanakan:
-            </p> 
-
-            <ol className="list-decimal pl-5 space-y-2 text-gray-600 marker:font-bold marker:text-gray-500">
-              <li>Menyelesaikan kelas industri</li>
-              <li>Melamar pekerjaan menjadi Web Developer</li>
-              <li>Bekerja di perusahaan teknologi sebagai Web Developer</li>
-            </ol>
-          </div>
-        </section>    
+  return (
+    <div className="min-h-screen text-gray-800 dark:text-gray-100 flex flex-col font-sans">
+      <main className="max-w-5xl mx-auto p-4 md:p-10 w-full space-y-12">
         
-        <section className="mt-10 rounded-2xl border border-gray-300 bg-white p-6 shadow-sm">        
-          <h2 className="mb-4 text-2xl font-bold text-utama">Keahlian</h2>        
-          <div className="grid gap-4 md:grid-cols-3">          
-            {skills.map((skill) => (            
-              <SkillCard key={skill.nama} nama={skill.nama} level={skill.level} />          
-            ))}        
-          </div>      
-        </section>  
 
-        <section className="mt-10 rounded-2xl border border-gray-300 bg-white p-6 shadow-sm">
-          <h2 className="mb-3 text-lg font-bold text-utama">Jadwal Belajar</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse text-xs">
-              <thead className="bg-table-header text-white bg-black">
-                <tr>
-                  <th className="px-5 py-5">Hari</th>
-                  <th className="px-5 py-5">waktu</th>
-                  <th className="px-5 py-5">kegiatan</th>
-                </tr>
-              </thead>
+        <Hero
+          nama="Dewi lestari"
+          tagline="Siswa kelas X SMK, calon Junior Web Developer di Kelas Industri UBIG." 
+        />
 
-              <tbody className="text-gray-700">
-                <tr className="border-b border-gray-700">
-                  <td className="px-4 py-4">senin</td>
-                  <td className="px-4 py-4">19.00-20.00</td>
-                  <td className="px-4 py-4">membaca ulang modul yang di kirim</td>
-                </tr>
+        <section id="keahlian" className="scroll-mt-6">
+          <h2 className="text-xl font-bold text-utama dark:text-sky-200 mb-5">Keahlian</h2>
+          
+          <FilterKeahlian skills={skills} />
 
-                <tr className="border-b border-gray-700">
-                  <td className="px-4 py-4">rabu</td>
-                  <td className="px-4 py-4">19.00-20.00</td>
-                  <td className="px-4 py-4">mengerjakan tugas praktek</td>
-                </tr>
-
-                <tr className="border-b border-gray-700">
-                  <td className="px-4 py-4">jumat</td>
-                  <td className="px-4 py-4">18.00-20.00</td>
-                  <td>merekam video dan menulis laporan tugas</td>
-                </tr>
-
-              </tbody>
-            </table>
+          <div className="mt-8 flex justify-start">
+            <Link 
+              href="/keahlian" 
+              className="rounded-lg bg-red-700 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-red-800 transition-all text-sm"
+            >
+              Lihat semua keahlian
+            </Link>
           </div>
         </section>
+
+        <section className="pt-2">
+          <h2 className="mb-5 text-xl font-bold text-utama dark:text-sky-200">Proyek Terbaru</h2>
+          
+          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+            {proyekTerbaru.map((item) => (
+              <ProyekCard key={item.slug} proyek={item} />
+            ))}
+          </div>
+          
+          <div className="mt-8 flex justify-start">
+            <Link 
+              href="/proyek" 
+              className="rounded-lg bg-red-700 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-red-800 transition-all text-sm"
+            >
+              Lihat semua proyek
+            </Link>
+          </div>
+        </section>
+
       </main>
-    );
-  }
+    </div>
+  );
+}
